@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+<br>
+<br>
+<h1>Artículos</h1>
+<br>
+<br>
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= render article %>
+    <p>
+      <button type="button" class="btn btn-dark"><%= link_to "Mostrar este artículo", article %></button>
+    </p>
+  <% end %>
+</div>
+<br>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQRpiR2masoPFp_cKZABGUu1UnHeiJBNKBdg&s" class="img-thumbnail" alt="..."> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFGRFyfuoLlBLlVCLAb7CZmNzeY1OeSlsyjQ&s" class="img-thumbnail" alt="..."> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Rsfl6dIGPbojoNrUPdja0WjgGk8ESACRZg&s" class="img-thumbnail" alt="...">
+<br>
+ <button type="button" class="btn btn-dark"><%= link_to "Nuevo articulo", new_article_path %></button>
+ <br>
+<br>

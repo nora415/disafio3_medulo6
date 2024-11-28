@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQRpiR2masoPFp_cKZABGUu1UnHeiJBNKBdg&s" class="img-thumbnail" alt="..."> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFGRFyfuoLlBLlVCLAb7CZmNzeY1OeSlsyjQ&s" class="img-thumbnail" alt="..."> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Rsfl6dIGPbojoNrUPdja0WjgGk8ESACRZg&s" class="img-thumbnail" alt="...">
+
+<br>
+<br>
+
+<%= render @article %>
+<br>
+<%= render 'comments/form' %>
+<br>
+<br>
+<%= render 'comments/article_comments' %>
+
+<br>
+<br>
+
+<div>
+   <button type="button" class="btn btn-dark"><%= link_to "Editar este artículo", edit_article_path(@article) %></button>
+   <button type="button" class="btn btn-dark"><%= link_to "Volver a artículos", articles_path %></button>
+   <button type="button" class="btn btn-dark"><%= link_to "Destroy this article", @article, method: :delete %></button>
+
+<br>
+<br>
+<br>
+<% Article::Kinds.each do |kind| %>
+<%= button_to "#{Article::KindsSpanish[kind]}",
+new_user_reaction_path(article_id: @article.id, reaction_type:
+"article", kind: kind), method: :post %>
+<% end %>
+
+</div>
+<br>
+<br>
